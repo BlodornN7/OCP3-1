@@ -4,11 +4,11 @@
   <head>
     <title>Page de connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="connexion.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-
-  <header> <!-- Haut de page contenant le logo ainsi que le nom et prénom de l'utilisateur connecté -->
+<!--
+  <header>  Haut de page contenant le logo ainsi que le nom et prénom de l'utilisateur connecté 
 	<nav id="navbox">
 
 	<div id="logo">
@@ -16,10 +16,11 @@
 	
 	</nav>
 </header>
+-->
+<?php include_once('headeralt.php'); ?>
 
 
-<section>
- <div id="Connexionsection">    
+<section id="Connexionsection">   
 	<h1>Page de connexion</h1>
     <form action="login.php" method="POST">
       <label for="username">Nom d'utilisateur:</label><br>

@@ -1,7 +1,12 @@
-
 #navbox {
 	display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#mainlogo {
+	position: relative;
+	bottom: 100px;
 }
 
 
@@ -116,4 +121,15 @@ header {
 
 #logo {
 	text-align: center;
+}
+
+#navbox {
+	display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+#mainlogo {
+	position: unset;
+}
 }

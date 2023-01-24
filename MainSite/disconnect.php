@@ -1,3 +1,5 @@
-<?php session_destroy();
-      header ('location: connexionpage.php');
+<?php 
+session_start();
+session_destroy();
+header ('location: Connexionpage.php');
       ?>

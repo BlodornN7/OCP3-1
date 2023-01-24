@@ -3,9 +3,12 @@
   <head>
     <title>Page de modification du compte</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="connexion.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <body>
+
+  <section id="Accountmodification">
 <?php include_once('header.php'); ?>
 
 <h1> Modification de vos informations : </h1>
@@ -34,6 +37,8 @@
 <label for="SecretAnswer">Réponse secrète : <?php echo $_SESSION['secret_answer']; ?></label><br>
       <input type="text" id="SecretAnswer" name="SecretAnswer"><br><br>
       <input type="submit" value="Modifier mon réponse secrète"><br> </form>
+
+</section>
 
 
 <?php include_once('footer.php'); ?>

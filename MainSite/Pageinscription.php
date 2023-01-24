@@ -4,11 +4,11 @@
   <head>
     <title>Page de connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="connexion.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
 
-       <?php include_once('header.php'); ?>
+       <?php include_once('headeralt.php'); ?>
 
 <section>
  <div id="Connexionsection">    

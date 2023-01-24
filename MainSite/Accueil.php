@@ -1,7 +1,11 @@
-<?php session_start();
+<?php session_start(); ?>
 
-
+<?php if ($_SESSION['logged_in'] !== true) {
+	header ('location: Connexionpage.php');
+	exit;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -17,8 +21,6 @@
 <main>
 	
 <div class="h1">
-
-<?php echo 'Votre login est '.$_SESSION['secret_question'].' et votre mot de passe est '.$_SESSION['secret_answer'].'.'; ?>
 
     <p>Présentation lroem ipsum dksjfdlfskfhjdsklfhsjfdklshjdskfshdjk</p>
     <div id="illustrationbox">
@@ -44,9 +46,11 @@
 		<div class="frame">
 			 <img class="image" src="images/CDE.png">
 			 <h3> Titre n°1</h3>
-			 <p> contenu textuel + lien</p>
+			 <p> Formation&co est une association française présente sur tout le territoire. 
+
+                Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé. </p>
 			 <div class="border">
-			 <button class="readmore"> lire la suite</button>
+			 <button class="readmore"><a href="CDE.php">lire la suite</a></button>
 			</div>
 	 </div>
 	 	
@@ -56,7 +60,9 @@
 			 <img class="image" src="images/CDE.png">
 			 <div class="h3pflex">
 			 <h3> Titre n°1</h3>
-			 <p> contenu textuel + lien</p>
+			 <p> Protectpeople finance la solidarité nationale. 
+
+                 Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale. </p>
 			</div>
 	 		 <div class="border">
 			 <button class="readmore"> lire la suite</button>
@@ -66,7 +72,9 @@
 	  <div class="frame">
 			 <img class="image" src="images/CDE.png">
 			 <h3> Titre n°1</h3>
-			 <p> contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien contenu textuel + lien  </p>
+			 <p> Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales. 
+
+                 Nous accompagnons les entreprises dans les étapes clés de leur évolution.   </p>
 	 		 <div class="border">
 			 <button class="readmore"> lire la suite</button>
 			</div>
@@ -74,7 +82,7 @@
 	  <div class="frame">
 			 <img class="image" src="images/CDE.png">
 			 <h3> Titre n°1</h3>
-			 <p> contenu textuel + lien</p>
+			 <p> La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.  </p>
 	 		 <div class="border">
 			 <button class="readmore"> lire la suite</button>
 			</div>
@@ -105,4 +113,5 @@
 </main>
 <?php include_once('footer.php'); ?>
 </body>
-</html>
+</html> "
+

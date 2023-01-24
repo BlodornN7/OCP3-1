@@ -20,8 +20,8 @@ $user = $CheckUsernameAndSecretAnswerSQL->fetch();
 
 if ($user["username"] === $username && $user["secret_answer"] === $SecretAnswer) {
         include_once('NewPassword_submit.php');
-        // code...
+        
 }
 
-else { include_once('ForgottenPasswordFail.php'); } ?> 
+else { header('location: ForgottenPasswordFail.php'); } ?> 
         

@@ -2,16 +2,13 @@
 
 #navbox {
 	display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: column-reverse;
 }
 
-#mainlogo {
-	position: relative;
-	bottom: 100px;
+#navbox p {
+	display: flex;
+    flex-direction: column-reverse;
 }
-
-
 
 
 
@@ -60,9 +57,7 @@ text-align: left;
 
 }
 
-#Connexionsection {
-	text-align: center;
-}
+
 .readmore {
 	text-align: center;
     border: solid;
@@ -155,9 +150,6 @@ border-bottom: none;
     padding-right: 5px;
 }
 
-#Accountinfo, #Accountmodification {
-	text-align: center;
-}
 
 
 @media screen and (max-width: 391px) {
@@ -167,16 +159,6 @@ header img {
     height: auto;
     max-width: 150px;
   }
-
-#navbox {
-	display: flex;
-    align-items: stretch;
-    flex-direction: column;
-}
-
-#mainlogo {
-	position: unset;
-}
 
 header {
 	text-align: center;

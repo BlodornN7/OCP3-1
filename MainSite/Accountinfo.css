@@ -54,15 +54,13 @@ h1, h2, main p {
 }
 
 div {
-text-align: left;
+text-align: center;
 	
 	
 
 }
 
-#Connexionsection {
-	text-align: center;
-}
+
 .readmore {
 	text-align: center;
     border: solid;
@@ -155,9 +153,6 @@ border-bottom: none;
     padding-right: 5px;
 }
 
-#Accountinfo, #Accountmodification {
-	text-align: center;
-}
 
 
 @media screen and (max-width: 391px) {

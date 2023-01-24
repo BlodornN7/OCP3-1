@@ -18,7 +18,7 @@ $UpdateUserPasswordSQL->bindParam(':password', $newpassword);
 $UpdateUserPasswordSQL->execute();
 $passwordupdated = $UpdateUserPasswordSQL;
 //Demande à PHP de notifier l'utilisateur de la réussite de l'opération 
-if ($passwordupdated) { echo "Mot de passe modifié !";
+if ($passwordupdated) { header ('location: Connexionpage.php');
     
 }
 //Notifie l'utilisateur de l'échec de l'opération

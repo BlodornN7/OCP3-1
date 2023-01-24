@@ -1,6 +1,12 @@
 #navbox {
 	display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#mainlogo {
+	position: relative;
+	bottom: 100px;
 }
 
 
@@ -64,11 +70,19 @@ header {
 	text-align: center;
 }
 
-#navbox {
-	display: inline-block;
-	text-align: center;
-}
 
 #logo {
 	text-align: center;
+}
+}
+
+#navbox {
+	display: flex;
+	flex-direction: column;
+    align-items: stretch;
+    
+}
+
+#mainlogo {
+	position: unset;
 }
