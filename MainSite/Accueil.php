@@ -1,3 +1,8 @@
+<?php session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +18,8 @@
 	
 <div class="h1">
 
-	<h1>Texte présentation du GBAF et du site</h1>
+<?php echo 'Votre login est '.$_SESSION['secret_question'].' et votre mot de passe est '.$_SESSION['secret_answer'].'.'; ?>
+
     <p>Présentation lroem ipsum dksjfdlfskfhjdsklfhsjfdklshjdskfshdjk</p>
     <div id="illustrationbox">
     <img id="illustration" src="images/logo.png">

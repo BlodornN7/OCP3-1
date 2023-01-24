@@ -1,4 +1,5 @@
-<?php 
+<?php
+ 
 try
 {
     $db = new PDO('mysql:host=localhost;dbname=gbaf_database;charset=utf8', 'root', 'root');
@@ -12,12 +13,12 @@ catch (Exception $e)
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-//$CheckUsernameSQL = $db->prepare('SELECT * FROM users WHERE username = :username');
+//$CheckUsernameSQL = $db->prepare('SELECT full_name FROM users WHERE username = :username');
 //$CheckUsernameSQL->bindParam(':username', $username);
 //$CheckUsernameSQL->execute();
 //$user1 = $CheckUsernameSQL->fetch();
 
-//$CheckPassWordSQL = $db->prepare('SELECT * FROM users WHERE password = :password');
+//$CheckPassWordSQL = $db->prepare('SELECT full_name FROM users WHERE username = :username');
 //$CheckPassWordSQL->bindParam(':password', $password);
 //$CheckPassWordSQL->execute();
 //$user2 = $CheckPassWordSQL->fetch();
@@ -29,12 +30,19 @@ $CheckUsernameAndPassWordSQL->execute();
 $user3 = $CheckUsernameAndPassWordSQL->fetch();
 
 if ($user3["username"] === $username && $user3["password"] === $password) {
-        include_once('Accueil.php');
+    
+    session_start ();
+    $_SESSION['full_name'] = $user3['full_name'];
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['secret_question'] = $user3['secret_question'];
+    $_SESSION['secret_answer'] = $user3['secret_answer'];
+    header ('location: Accueil.php');
         
 }
 
 
-else { include_once('Connexionpagefail.php'); } ?> 
+else { header ('location: Connexionpagefail.php'); } ?> 
         
 
 
