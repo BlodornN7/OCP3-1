@@ -28,7 +28,7 @@
 <h2> Notre vocation est de vous protéger.</h2>
 
 
-<b><p> Protectpeople finance la solidarité nationale.<br>
+<p> Protectpeople finance la solidarité nationale.<br>
 
 Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.<br>
 
@@ -49,22 +49,29 @@ Notre mission est double :
 <li>sociale : nous garantissons la fiabilité des données sociales ;</li> 
 
 <li>économique : nous apportons une contribution aux activités économiques.</li>  </p>
-</ul><b>
+</ul>
 </section>
 
 <section id="commentaire">
 
 	<h3> Commentaires </h3>
 
-	<button id="Newcomment"><a href="protectpeople_comment.php">Nouveau commentaire</a></button>
+	
+    <form id="commentform" action="submit_comment_protectpeople.php" method="POST">
+      <label for="Comment">Commentaire</label><br>
+      <textarea id="Comment" name="Comment" rows="5" cols="80"></textarea><br>
+      <input type="submit" value="Publier mon commentaire"><br> </form>
+	<button id="LikeDislike">Likedislike</button><br>
+	
 	<?php include_once("Getcomment_protectpeople.php"); ?>
 	<?php foreach ($comment as $comments) { ?>
+		<div class="CommentSection">
 	<p> Auteur : <?php echo $comments['username']; ?> </p>
 	<p> Commentaire : <?php echo $comments['comment']; ?> </p>
-
-	<button id="LikeDislike">Likedislike</button>
+	</div>
 	<?php } ?>
-
+    
+	
 
 
 
@@ -75,27 +82,3 @@ Notre mission est double :
 </section>
 
 <?php include_once('footer.php'); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>

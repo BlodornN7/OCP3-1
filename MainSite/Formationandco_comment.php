@@ -51,9 +51,13 @@ Vous n’avez pas de diplômes ? Ce n’est pas un problème pour nous ! Nos fin
 
 	<h3> Commentaires </h3>
 
-	<button id="Newcomment"><a href="Formationandco_comment.php">Nouveau commentaire</a></button>
-
-    <?php include_once("Getcomment_Formationandco.php"); ?>
+	<form id="commentform" action="submit_comment_formationandco.php" method="POST">
+      <label for="Comment">Commentaire</label><br>
+      <textarea id="Comment" name="Comment" rows="5" cols="80"></textarea><br>
+      <input type="submit" value="Publier mon commentaire"><br> </form>
+	<button id="LikeDislike">Likedislike</button><br>
+	
+	<?php include_once("Getcomment_Formationandco.php"); ?>
 	<?php foreach ($comment as $comments) { ?>
 		<div class="CommentSection">
 	<p> Auteur : <?php echo $comments['username']; ?> </p>
@@ -74,27 +78,3 @@ Vous n’avez pas de diplômes ? Ce n’est pas un problème pour nous ! Nos fin
 </section>
 
 <?php include_once('footer.php'); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>

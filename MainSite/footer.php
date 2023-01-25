@@ -1,5 +1,5 @@
 <footer id="footer">
-	<p id="mentionslégales"> Mentions légales</p>
-	<p id="Contact">Contact</p>
+	<p id="mentionslégales"><a href="">Mentions légales</a></p>
+	<p id="Contact"><a href="">Contact</a></p>
 	
 </footer>

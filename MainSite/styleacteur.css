@@ -17,6 +17,14 @@ height : auto;
 max-width : 150px;
 }
 
+#commentform {
+	text-align: center;
+}
+.CommentSection {
+	border: solid;
+    margin: 10px;
+	border-radius: 10px;
+}
 
 
 header {
@@ -102,6 +110,7 @@ word-break: break-all;
 }
 
 
+
 @media screen and (max-width: 391px) {
 
 header img {
@@ -132,4 +141,6 @@ header {
 #mainlogo {
 	position: unset;
 }
+
+
 }

@@ -40,9 +40,13 @@ Nous les accompagnons pour voir plus grand et plus loin et proposons des solutio
 
 	<h3> Commentaires </h3>
 
-	<button id="Newcomment"><a href="DsaFrance_comment.php">Nouveau commentaire</a></button>
-    
-    <?php include_once("Getcomment_DsaFrance.php"); ?>
+	<form id="commentform" action="submit_comment_dsafrance.php" method="POST">
+      <label for="Comment">Commentaire</label><br>
+      <textarea id="Comment" name="Comment" rows="5" cols="80"></textarea><br>
+      <input type="submit" value="Publier mon commentaire"><br> </form>
+	<button id="LikeDislike">Likedislike</button><br>
+	
+	<?php include_once("Getcomment_DsaFrance.php"); ?>
 	<?php foreach ($comment as $comments) { ?>
 		<div class="CommentSection">
 	<p> Auteur : <?php echo $comments['username']; ?> </p>

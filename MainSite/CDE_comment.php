@@ -5,7 +5,6 @@
 	exit;
 }
 ?>
-<!DOCTYPE html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,7 @@
 
 <section id="sectionacteur1">
 	<div class="logoacteurdiv" >
-	<h1> <img id="logoacteur" src="images/Dsa_france.png">    </h1>
+	<h1> <img id="logoacteur" src="images/CDE.png">    </h1>
 	</div>
 
 
@@ -27,22 +26,24 @@
 <h2> Notre vocation est de vous protéger.</h2>
 
 
-FoDsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales.<br> 
+<p> Protectpeople finance la solidarité nationale.<br><br>
 
-Nous accompagnons les entreprises dans les étapes clés de leur évolution.<br> 
+La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.<br><br>
 
-Notre philosophie : s’adapter à chaque entreprise.<br> 
-
-Nous les accompagnons pour voir plus grand et plus loin et proposons des solutions de financement adaptées à chaque étape de la vie des entreprises 
+Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.<br></p>
 </section>
 
 <section id="commentaire">
 
 	<h3> Commentaires </h3>
 
-	<button id="Newcomment"><a href="DsaFrance_comment.php">Nouveau commentaire</a></button>
-    
-    <?php include_once("Getcomment_DsaFrance.php"); ?>
+	<form id="commentform" action="submit_comment_CDE.php" method="POST">
+      <label for="Comment">Commentaire</label><br>
+      <textarea id="Comment" name="Comment" rows="5" cols="80"></textarea><br>
+      <input type="submit" value="Publier mon commentaire"><br> </form>
+	<button id="LikeDislike">Likedislike</button><br>
+	
+	<?php include_once("Getcomment_CDE.php"); ?>
 	<?php foreach ($comment as $comments) { ?>
 		<div class="CommentSection">
 	<p> Auteur : <?php echo $comments['username']; ?> </p>

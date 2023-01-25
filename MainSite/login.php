@@ -38,6 +38,7 @@ if ($user3["username"] === $username && $user3["password"] === $password) {
     $_SESSION['secret_question'] = $user3['secret_question'];
     $_SESSION['secret_answer'] = $user3['secret_answer'];
     $_SESSION['logged_in'] = true;
+    $_SESSION['user_id'] = $user3['user_id'];
     header ('location: Accueil.php');
         
 }

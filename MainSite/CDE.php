@@ -37,7 +37,15 @@ Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et prés
 
 	<h3> Commentaires </h3>
 
-	<button id="Newcomment">Nouveau commentaire</button>
+	<button id="Newcomment"><a href="CDE_comment.php">Nouveau commentaire</a></button>
+    
+    <?php include_once("Getcomment_CDE.php"); ?>
+	<?php foreach ($comment as $comments) { ?>
+		<div class="CommentSection">
+	<p> Auteur : <?php echo $comments['username']; ?> </p>
+	<p> Commentaire : <?php echo $comments['comment']; ?> </p>
+	</div>
+	<?php } ?>
 
 	<button id="LikeDislike">Likedislike</button>
 	
