@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if ($_SESSION['logged_in'] !== true) {
+      header ('location: login.php');
+      exit;
+}
+?>
 <html>
   <head>
     <title>Page de modification du compte</title>
@@ -14,9 +19,14 @@
 <h1> Modification de vos informations : </h1>
 
 <form action="ValidateAccountModification.php" method="POST">
-<label for="FullName">Nom complet :<?php echo $_SESSION['full_name']; ?></label><br>
-      <input type="text" id="FullName" name="FullName"><br><br>
-      <input type="submit" value="Modifier mon nom complet"><br> </form>
+<label for="Name">Nom: <?php echo $_SESSION['name']; ?></label><br>
+      <input type="text" id="Name" name="Name"><br><br>
+      <input type="submit" value="Modifier mon nom"><br> </form>
+ 
+<form action="ValidateAccountModification.php" method="POST">
+<label for="Surname">Prénom : <?php echo $_SESSION['surname']; ?></label><br>
+      <input type="text" id="Surname" name="Surname"><br><br>
+      <input type="submit" value="Modifier mon prénom"><br> </form>      
 
 <form action="ValidateAccountModification.php" method="POST">
 <label for="UserName">Nom d'utilisateur : <?php echo $_SESSION['username']; ?></label><br>

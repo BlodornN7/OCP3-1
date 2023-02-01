@@ -10,52 +10,53 @@ catch (Exception $e)
 }
 
 
-$fullname = $_POST['FullName'];
+$name = $_POST['Name'];
+$surname = $_POST['Surname'];
 $username = $_POST['UserName'];
 $password = $_POST['Password'];
 $secretquestion = $_POST['SecretQuestion'];
 $secretanswer = $_POST['SecretAnswer'];
 //
-$CheckUsernameAvailableSQL = 'SELECT * FROM users WHERE username = $username ';
-$CheckFullNameAvailableSQL = 'SELECT * FROM users WHERE username = $fullname ';
+$CheckUsernameAvailableSQL = 'SELECT * FROM users_new WHERE username = $username ';
+$CheckFullNameAvailableSQL = 'SELECT * FROM users_new WHERE username = $fullname ';
 
 
 
 
 //Demande à l'utilisateur si le nom d'utilisateur est déjà utilisé
-$CheckUsernameAvailableSQL = $db->prepare("SELECT * FROM users WHERE username = :username");
+$CheckUsernameAvailableSQL = $db->prepare("SELECT * FROM users_new WHERE username = :username");
 $CheckUsernameAvailableSQL->bindParam(':username', $username);
 $CheckUsernameAvailableSQL->execute();
 $user1 = $CheckUsernameAvailableSQL->fetch();
 //Demande à SQL de vérifier si le nom complet est déjà utilisé
-$CheckFullNameAvailableSQL = $db->prepare("SELECT * FROM users WHERE full_name = :fullname");
-$CheckFullNameAvailableSQL->bindParam(':fullname', $fullname);
-$CheckFullNameAvailableSQL->execute();
-$user2 = $CheckFullNameAvailableSQL->fetch();
+//$CheckFullNameAvailableSQL = $db->prepare("SELECT * FROM users_new WHERE full_name = :fullname");
+//$CheckFullNameAvailableSQL->bindParam(':fullname', $fullname);
+//$CheckFullNameAvailableSQL->execute();
+//$user2 = $CheckFullNameAvailableSQL->fetch();
 if ($user1) {
     echo "Le nom d'utilisateur n'est pas disponible";
     exit(); // ce code stoppe le script
-} elseif ($user2) {
-    echo "Le nom complet est déjà utilisé";
-    exit();
-    // code...
 } 
+
 else {
 
     
 
 //Ecriture de la requête
-$sqlQuery = 'INSERT INTO users(full_name, username, password, secret_question, secret_answer) VALUES (:full_name, :username, :password, :secret_question, :secret_answer)';
+$sqlQuery = 'INSERT INTO users_new(nom, prenom, username, password, question, reponse) VALUES (:nom, :prenom, :username, :password, :question, :reponse)';
 //Préparation
 $insertUser = $db->prepare($sqlQuery);
 // Execution
 $insertUser->execute([
-'full_name' => $fullname,
+'nom' => $name,
+'prenom' => $surname,
 'username' => $username,
 'password' => $password,
-'secret_question' => $secretquestion,
-'secret_answer' => $secretanswer,
-]); };
+'question' => $secretquestion,
+'reponse' => $secretanswer,
+
+]);
+header('location: Connexionpage.php');}
 
 ?>
 

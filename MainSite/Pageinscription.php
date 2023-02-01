@@ -2,20 +2,22 @@
 
 <html>
   <head>
-    <title>Page de connexion</title>
+    <title>Page d'inscription</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
 
-       <?php include_once('headeralt.php'); ?>
+       <?php include_once('header.php'); ?>
 
 <section>
  <div id="Connexionsection">    
-	<h1>Page de connexion</h1>
+	<h1>Page d'inscription</h1>
     <form action="submit_contact.php" method="POST">
-      <label for="FullName">Nom complet</label><br>
-      <input type="text" id="FullName" name="FullName"><br>
+      <label for="Name">Nom</label><br>
+      <input type="text" id="Name" name="Name"><br>
+      <label for="Surname">Prénom</label><br>
+      <input type="text" id="Surname" name="Surname"><br>
       <label for="UserName">Nom d'utilisateur</label><br>
       <input type="text" id="UserName" name="UserName"><br>
       <label for="Password">Mot de passe</label><br>

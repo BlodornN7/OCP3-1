@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+if ($_SESSION['logged_in'] !== true) {
+  header ('location: login.php');
+  exit;
+} ?>
 <html>
   <head>
     <title>Page d'information du compte</title>
@@ -12,8 +16,11 @@
 <section id="Accountinfo">
 <h1> Voici un récapitulatif de vos informations : </h1>
 
-<p> <b>Nom complet :</b></p>
- <?php echo $_SESSION['full_name']; ?> 
+<p> <b>Nom :</b></p>
+ <?php echo $_SESSION['name']; ?>
+ 
+ <p> <b>Prénom :</b></p>
+ <?php echo $_SESSION['surname']; ?>
 
 <p> <b>Nom d'utilisateur</b> :</p>
 <?php echo $_SESSION['username']; ?> 
